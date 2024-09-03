@@ -33,3 +33,13 @@ Execute the testing script:
 ```shell
 $ php public/tester.php
 ```
+
+## References
+
+https://docs.guzzlephp.org/en/stable/request-options.html#json
+
+> This request option does not support customizing the Content-Type header or any of the options from PHP's [json_encode()](http://www.php.net/manual/en/function.json-encode.php) function. If you need to customize these settings, then you must pass the JSON encoded data into the request yourself using the `body` request option and you must specify the correct Content-Type header using the `headers` request option.
+
+In conclusion, the only content type that won't be messed with custom headers is `application/json`.
+
+Please check the source code ([Client::applyOptions](https://github.com/guzzle/guzzle/blob/7.7/src/Client.php)) for more information.
